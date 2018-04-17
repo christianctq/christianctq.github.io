@@ -2,53 +2,10 @@
 <%@ taglib uri="/WEB-INF/tld/trswas.tld" prefix="TRS"%>
 <%@include file="../inc/import_package.jsp"%>
 <%@include file="../inc/getsysteminfo.jsp"%>
-<%@page import="java.util.regex.*" %>
 <%@page import="com.trs.was.suggest.IndexMaintain" %>
 <%@page import="java.util.*" %>
-
-<!-- oyhc -->
-<%@page import="org.json.JSONArray"%>
-<%@page import="com.trs.components.metadata.center.MetaViewData"%>
-<%@page import="java.text.DateFormat"%>
-
-<!-- oyhc --> 
-<%@page import="java.util.*,java.text.*"%> 
-<%@page import="org.json.JSONObject"%> 
-<%@page import="org.json.JSONException"%>
-<%@page import="java.net.URLDecoder"%> 
-<%@page import="java.io.File"%> 
-
-<!-- oyhc bm--> 
-<%@page import="java.util.List"%> 
-<%@page import="java.util.ArrayList"%> 
-<%@page import="java.util.Set"%> 
-<%@page import="java.util.HashSet"%>
-
-<!-- oyhc - lfw -->
-<%@ page import="com.trs.infra.util.CPager" %>
-<%@ page import="com.trs.infra.util.CMyString" %>
-<%@ page import="com.trs.components.metadata.center.MetaViewData" %>
-<%@ page import="com.trs.components.metadata.center.MetaViewDatas" %> 
-<%@ page import="com.trs.ajaxservice.ServiceConstants" %>
-<%@ page import="com.trs.infra.util.CMyDateTime" %>
-<%@ page import="com.trs.infra.common.WCMException" %>
-<%@ page import="com.trs.cms.auth.domain.AuthServer" %>
-<%@ page import="com.trs.infra.common.WCMRightTypes" %>
-<%@ page import="com.trs.infra.support.config.ConfigServer" %>
-<%@ page import="java.net.URLEncoder" %>
-<%@ page import="com.trs.ajaxservice.JSONHelper" %>
-<%@ page import="com.trs.infra.persistent.WCMFilter" %>
-<%@ page import="com.trs.infra.persistent.db.DBManager"%>
-<%@ page import="java.sql.Connection"%>
-<%@ page import="java.sql.PreparedStatement"%>
-<%@ page import="java.sql.ResultSet"%>
-<%@ page import="java.sql.SQLException"%>
 <%@ page import="java.text.SimpleDateFormat"%>
-<%@ page import="java.util.Date"%>
-<%@ page import="com.trs.components.wcm.content.persistent.Channel"%>
-<%@ page import="com.trs.cms.ContextHelper"%>
-<%@ page import="com.trs.cms.auth.persistent.User"%>
-<%@ page import="java.util.Random"%>
+
 <body>
 <% 
 	// 初始化对象
@@ -747,9 +704,6 @@
 	<%
 	}catch(Exception e){
 		e.printStackTrace();
-		out.clear();
-		System.out.println(e.getMessage());
-		out.println("<script>alert('您的意见没有提交成功，请等待我们处理！');window.opener=null;window.open('','_self','');window.close();</script>");
 	}finally {
 		if (trsConnection != null) {
 			trsConnection.clean();
